@@ -1,0 +1,19 @@
+footer {
+  background-color: red;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  padding: 4em;
+}
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: flex-start;
+  gap: 1em;
+  padding-top: 1em;
+}
+.icon {
+  margin-right: 0.5em;
+}

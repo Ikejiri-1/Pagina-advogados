@@ -5,6 +5,7 @@ import { DireitoTrabalhista } from "../pages/Direito-trabalhista";
 import { Direito1 } from "../pages/Direito-1";
 import { Direito2 } from "../pages/Direito-2";
 import { Direito3 } from "../pages/Direito-3";
+import { Contato } from "../pages/Contato";
 
 export function Root() {
   return (
@@ -15,6 +16,7 @@ export function Root() {
         <Route path="/direito-1" element={<Direito1 />} />
         <Route path="/direito-2" element={<Direito2 />} />
         <Route path="/direito-3" element={<Direito3 />} />
+        <Route path="/contato" element={<Contato />} />
       </Route>
     </Routes>
   );

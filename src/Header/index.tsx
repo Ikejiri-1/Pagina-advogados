@@ -13,6 +13,10 @@ const links = [
     name: "Contato",
     link: "contato",
   },
+  {
+    name: "Portal de conteúdo",
+    link: "Portal de conteudo",
+  },
 ];
 
 export function Header() {
