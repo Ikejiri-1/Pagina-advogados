@@ -21,22 +21,23 @@ export function Form() {
 
   const validationSchema = Yup.object({
     email: Yup.string()
-      .email("E-mail inválido")
+      .email("Formato de email: exemplo@dominio.com")
       .required("Por favor, insira um e-mail"),
     tel: Yup.string().required("Por favor, insira seu telefone"),
     username: Yup.string().required("Por favor, insira seu nome"),
   });
   const handleSubmit = (values: FormValues) => {
-    const phoneNumber = "+55 11 99999-9999"; // seu número de destino (com DDI +55 e DDD)
+    const phoneNumber = "+55 12 99999-9999";
+    const cleanPhone = phoneNumber.replace(/\D/g, "");
     const message = `Olá! Me chamo ${values.username}.
 Meu e-mail é: ${values.email}.
 Meu telefone é: ${values.tel}.
-Gostaria de saber mais informações sobre o serviço.
+
+${values.message}
 `;
 
-    const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(
-      message
-    )}`;
+    const url = `whatsapp://send?phone=${cleanPhone}&text=${message}
+`;
 
     window.open(url, "_blank");
   };
@@ -48,7 +49,6 @@ Gostaria de saber mais informações sobre o serviço.
       onSubmit={(values, { setSubmitting }) => {
         handleSubmit(values);
         setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
           setSubmitting(false);
         }, 400);
       }}
