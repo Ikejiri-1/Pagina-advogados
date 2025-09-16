@@ -21,7 +21,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url("/src/assets/img.png") center/cover no-repeat;
+  background: url("/src/assets/balanca.png") center center / contain no-repeat;
   opacity: 0;
   transition: opacity 0.6s ease;
   border-radius: 1em;
@@ -31,7 +31,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url("/src/assets/img.png") center/cover no-repeat;
+  background: url("/src/assets/balanca.png") center center / contain no-repeat;
   opacity: 0;
   transition: opacity 0.6s ease;
   border-radius: 1em;
@@ -41,7 +41,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url("/src/assets/img.png") center/cover no-repeat;
+  background: url("/src/assets/balanca.png") center center / contain no-repeat;
   opacity: 0;
   transition: opacity 0.6s ease;
   border-radius: 1em;
@@ -51,7 +51,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url("/src/assets/img.png") center/cover no-repeat;
+  background: url("/src/assets/balanca.png") center center / contain no-repeat;
   opacity: 0;
   transition: opacity 0.6s ease;
   border-radius: 1em;
