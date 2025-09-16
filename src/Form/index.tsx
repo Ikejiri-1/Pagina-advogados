@@ -1,10 +1,12 @@
 import { Formik } from "formik";
 import * as Yup from "yup";
+import "./Form.css";
 
 interface FormValues {
   username: string;
   tel: string;
   email: string;
+  message: string;
   onSubmit: () => void;
 }
 
@@ -13,13 +15,16 @@ export function Form() {
     username: "",
     email: "",
     tel: "",
+    message: "",
     onSubmit: () => {},
   };
 
   const validationSchema = Yup.object({
-    email: Yup.string().email("E-mail inválido").required("E-mail obrigatório"),
-    tel: Yup.string().required("Telefone obrigatório"),
-    username: Yup.string().required("Nome obrigatório"),
+    email: Yup.string()
+      .email("E-mail inválido")
+      .required("Por favor, insira um e-mail"),
+    tel: Yup.string().required("Por favor, insira seu telefone"),
+    username: Yup.string().required("Por favor, insira seu nome"),
   });
   const handleSubmit = (values: FormValues) => {
     const phoneNumber = "+55 11 99999-9999"; // seu número de destino (com DDI +55 e DDD)
@@ -58,7 +63,8 @@ Gostaria de saber mais informações sobre o serviço.
         isSubmitting,
       }) => (
         <form className="form-container" onSubmit={handleSubmit}>
-          <div>
+          <div className="input-container">
+            <label htmlFor="username">Nome</label>
             <input
               type="text"
               name="username"
@@ -72,7 +78,8 @@ Gostaria de saber mais informações sobre o serviço.
             )}
           </div>
 
-          <div>
+          <div className="input-container">
+            <label htmlFor="tel">Telefone</label>
             <input
               type="tel"
               name="tel"
@@ -86,7 +93,8 @@ Gostaria de saber mais informações sobre o serviço.
             )}
           </div>
 
-          <div>
+          <div className="input-container">
+            <label htmlFor="email">E-mail</label>
             <input
               type="email"
               name="email"
@@ -99,9 +107,22 @@ Gostaria de saber mais informações sobre o serviço.
               <div style={{ color: "red" }}>{errors.email}</div>
             )}
           </div>
+          <div className="input-container">
+            <label htmlFor="message">Mensagem</label>
+            <textarea
+              name="message"
+              placeholder="Digite sua mensagem"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.message}
+            />
+            {errors.message && touched.message && (
+              <div style={{ color: "red" }}>{errors.message}</div>
+            )}
+          </div>
 
           <button type="submit" disabled={isSubmitting}>
-            Entrar
+            Entre em contato
           </button>
         </form>
       )}

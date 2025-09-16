@@ -1,44 +1,27 @@
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/swiper-bundle.css";
+import "./Carousel.css";
 interface CarouselProps {
-  carouselItems: { id: number; img: string }[];
+  carouselItems: { id: number; img: string; alt?: string }[];
 }
 
 export function Carousel({ carouselItems }: CarouselProps) {
   return (
-    <div id="carouselExampleFade" className="carousel slide carousel-fade">
-      <div className="carousel-inner">
-        {carouselItems.map((item, index) => (
-          <div
-            key={item.id}
-            className={`carousel-item ${index === 0 ? "active" : ""}`} // ativa a primeira
-          >
-            <img
-              src={item.img}
-              className="d-block w-100"
-              alt={`Slide ${item.id}`}
-              style={{ objectFit: "cover", height: "500px" }} // mantém proporção
-            />
-          </div>
-        ))}
-      </div>
-
-      <button
-        className="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleFade"
-        data-bs-slide="prev"
-      >
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
-      </button>
-      <button
-        className="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleFade"
-        data-bs-slide="next"
-      >
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Next</span>
-      </button>
-    </div>
+    <Swiper
+      modules={[Navigation, Pagination, Autoplay]}
+      navigation
+      pagination={{ clickable: true }}
+      autoplay={{ delay: 3000 }}
+      className="mySwiper"
+      loop
+    >
+      {carouselItems.map((item) => (
+        <SwiperSlide key={item.id}>
+          <img src={item.img} alt={item.alt} className="carousel-img" />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 }
