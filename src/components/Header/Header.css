@@ -1,3 +1,17 @@
 li a .texto {
   text-transform: uppercase;
+  margin-top: 2em;
+}
+header {
+  background: url("/src/assets/bg.png") no-repeat center center fixed;
+  background-size: cover;
+  height: 20vh;
+}
+header figure img {
+  width: 280px;
+  height: 240px;
+}
+
+.header-links {
+  margin-top: 4em;
 }
