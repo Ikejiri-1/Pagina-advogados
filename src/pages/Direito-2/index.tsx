@@ -1,10 +1,10 @@
 import { Accordion } from "../../components/Accordion";
 import { Carousel } from "../../components/Carousel";
-
+import balanca from "../../assets/balanca.png";
 const carouselItems = [
   {
     id: 1,
-    img: "/src/assets/img.png",
+    img: balanca,
   },
 ];
 
