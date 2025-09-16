@@ -1,5 +1,5 @@
-import { Carousel } from "../../Carousel";
-import { Form } from "../../Form";
+import { Carousel } from "../../components/Carousel";
+import { Form } from "../../components/Form";
 
 const carouselItems = [
   {

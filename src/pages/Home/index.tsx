@@ -1,5 +1,5 @@
-import { Cards } from "../../Cards";
-import { Carousel } from "../../Carousel";
+import { Cards } from "../../components/Cards";
+import { Carousel } from "../../components/Carousel";
 import "./Home.css";
 
 const carouselItems = [

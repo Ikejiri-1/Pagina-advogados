@@ -13,7 +13,7 @@ export function Carousel({ carouselItems }: CarouselProps) {
       modules={[Navigation, Pagination, Autoplay]}
       navigation
       pagination={{ clickable: true }}
-      autoplay={{ delay: 3000 }}
+      autoplay={{ delay: 5000 }}
       className="mySwiper"
       loop
     >
