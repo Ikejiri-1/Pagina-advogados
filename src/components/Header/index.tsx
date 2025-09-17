@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
 import logo from "../../assets/logo-caios.png";
 const links = [
@@ -25,6 +25,7 @@ const links = [
 ];
 
 export function Header() {
+  const location = useLocation();
   return (
     <header className="d-flex flex-row justify-content-around">
       <div>
@@ -35,14 +36,20 @@ export function Header() {
         </figure>
       </div>
       <div>
-        <ul className="d-flex flex-row gap-3">
-          {links.map((link) => (
-            <li key={link.name} className="py-4 header-links">
-              <Link to={`/${link.link}`}>
-                <button className="btn texto">{link.name}</button>
-              </Link>
-            </li>
-          ))}
+        <ul className="d-flex flex-row gap-3 my-5">
+          {links.map((link) => {
+            const isActive = link.link === location.pathname;
+            return (
+              <li key={link.id} className="header-links ">
+                <Link
+                  to={link.link}
+                  className={`texto ${isActive ? "active-link" : ""}`}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </header>

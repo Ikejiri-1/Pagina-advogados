@@ -8,6 +8,7 @@ const carouselItems = [
   {
     id: 1,
     img: img,
+    title: "Teste",
   },
   {
     id: 2,

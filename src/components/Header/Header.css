@@ -1,6 +1,7 @@
-li a .texto {
+li a {
   text-transform: uppercase;
   margin-top: 2em;
+  color: #1f2070;
 }
 header {
   background: url("/src/assets/bg.png") no-repeat center center fixed;
@@ -13,5 +14,9 @@ header figure img {
 }
 
 .header-links {
-  margin-top: 4em;
+  margin-top: 5em;
+}
+
+.active-link {
+  color: red;
 }
