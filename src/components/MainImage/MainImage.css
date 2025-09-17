@@ -1,0 +1,29 @@
+.main-image-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.main-image-content img {
+  width: 100%;
+  height: 60vh;
+  opacity: 0.9;
+}
+.main-image-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  max-width: 80%;
+  z-index: 1;
+  pointer-events: none;
+  text-transform: uppercase;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.5em;
+  border-radius: 0.2em;
+}

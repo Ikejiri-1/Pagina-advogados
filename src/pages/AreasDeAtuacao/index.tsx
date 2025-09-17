@@ -1,19 +1,16 @@
-import { Carousel } from "../../components/Carousel";
 import areasAtuacao from "../../assets/areas-atuacao.png";
 import { Cards } from "../../components/Cards";
-const carouselItems = [
-  {
-    id: 1,
-    img: areasAtuacao,
-    title: "Áreas de Atuação",
-  },
-];
+import { MainImage } from "../../components/MainImage";
 
 export function AreasDeAtuacao() {
   return (
     <section>
       <div>
-        <Carousel carouselItems={carouselItems} />
+        <MainImage
+          img={areasAtuacao}
+          alt="imagem de uma balança dourada com muitos livros atrás e um martelo de juíz na frente"
+          title="Areas de atuação"
+        />
       </div>
       <div className="my-5">
         <Cards></Cards>

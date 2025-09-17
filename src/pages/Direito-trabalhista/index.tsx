@@ -1,13 +1,7 @@
 import { Accordion } from "../../components/Accordion";
-import { Carousel } from "../../components/Carousel";
-import balanca from "../../assets/balanca.png";
 
-const carouselItems = [
-  {
-    id: 1,
-    img: balanca,
-  },
-];
+import balanca from "../../assets/balanca.png";
+import { MainImage } from "../../components/MainImage";
 
 const AccordionItems = [
   { id: 1, title: "Teste", text: "alguma coisa" },
@@ -20,7 +14,11 @@ export function DireitoTrabalhista() {
   return (
     <section>
       <div>
-        <Carousel carouselItems={carouselItems} />
+        <MainImage
+          img={balanca}
+          alt="imagem de uma balança dourada "
+          title="balanca"
+        />
       </div>
       <div className="my-5 text-center mx-5">
         <p>
